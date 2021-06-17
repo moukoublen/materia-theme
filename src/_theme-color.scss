@@ -23,8 +23,8 @@
   @return if($brightness < 128, true, false);
 }
 
-$on-light: #000;
-$on-dark: #fff;
+$on-light: #1c2128;  // scale.black (Dark dimmed)
+$on-dark: #cdd9e5;   // scale.white (Dark dimmed)
 
 // Determine whether to use dark or light color on top of given color
 // to meet accessibility standards for contrast.
@@ -58,67 +58,67 @@ $on-dark: #fff;
 // Main colors
 //
 
-$surface-z0: #f9f9f9;
-$surface-z1: #fff;
-$surface-z8: #fff;
-$surface-switch-thumb: #fff;
+$surface-z0: #f6f8fa;            // scale.gray.0  (Light)
+$surface-z1: #eaeef2;            // scale.gray.1 (Light)
+$surface-z8: #ffffff;            // scale.white (Light)
+$surface-switch-thumb: #d0d7de;  // scale.gray.2 (Light)
 $on-surface: on($surface-z0);
 
-$primary-on-light: #1967d2;
-$primary-on-dark: #8ab4f8;
+$primary-on-light: #e85aad;      // scale.pink.4 (Light)
+$primary-on-dark: #e275ad;       // scale.pink.3 (Dark dimmed)
 $primary: $primary-on-light;
 $on-primary: on($primary);
 
-$error-on-light: #d93025;
-$error-on-dark: #f28b82;
+$error-on-light: #fa4549;        // scale.red.4 (Light)
+$error-on-dark: #f47067;         // scale.red.3 (Dark dimmed)
 $error: $error-on-light;
 $on-error: on($error);
 
-$warning-on-light: #f9ab00;
-$warning-on-dark: #fdd663;
+$warning-on-light: #d4a72c;      // scale.yellow.3 (Light)
+$warning-on-dark: #805400;       // scale.yellow.6 (Dark dimmed)
 $warning: $warning-on-light;
 $on-warning: on($warning);
 
-$success-on-light: #1e8e3e;
-$success-on-dark: #81c995;
+$success-on-light: #1a7f37;      // scale.green.5 (Light)
+$success-on-dark: #57ab5a;       // scale.green.3 (Dark dimmed)
 $success: $success-on-light;
 $on-success: on($success);
 
-$visited-on-light: #9334e6;
-$visited-on-dark: #c58af9;
+$visited-on-light: #a475f9;      // scale.purple.4 (Light)
+$visited-on-dark: #b083f0;       // scale.purple.3 (Dark dimmed)
 $visited: $visited-on-light;
 $on-visited: on($visited);
 
-$system: #212121;
+$system: #22272e;                // scale.gray.9 (Dark dimmed)
 $on-system: on($system);
 
-$tooltip: rgba(#616161, .9);
+$tooltip: rgba(#545d68, .9);     // scale.gray.5 (Dark dimmed)
 $on-tooltip: on($tooltip);
 
-$scrim: rgba(black, .6);
+$scrim: rgba(#22272e, .6);       // scale.gray.9 (Dark dimmed)
 $on-scrim: on($scrim);
 
-$scrim-alt: rgba(black, .3);
+$scrim-alt: rgba(#22272e, .3);   // scale.gray.9 (Dark dimmed)
 $on-scrim-alt: on($scrim-alt);
 
-$panel: #212121;
-$on-panel: on($panel);
+$panel: #22272e;                 // scale.gray.9 (Dark dimmed)
+$on-panel: #cdd9e5;              // scale.white  (Dark dimmed)
 
 // for Unity panel which doesn't allow translucent colors
 $panel-solid: $panel;
-$on-panel-solid: on($panel-solid);
+$on-panel-solid: $on-panel;
 
-$titlebar: #424242;
-$titlebar-backdrop: #303030;
+$titlebar: #22272e;           // scale.gray.9 (Dark dimmed)
+$titlebar-backdrop: #1c2128;  // scale.black  (Dark dimmed)
 $on-titlebar: on($titlebar);
 
 $titlebar-indicator: currentcolor;
 
 @if theme.$dark-theme {
-  $surface-z0: #121212;
-  $surface-z1: color.mix(white, $surface-z0, 5%);
-  $surface-z8: color.mix(white, $surface-z0, 12%);
-  $surface-switch-thumb: color.mix(white, $surface-z0, 60%);
+  $surface-z0: #22272e;           // scale.gray.9 (Dark dimmed)
+  $surface-z1: #2d333b;           // scale.gray.8 (Dark dimmed)
+  $surface-z8: #1c2128;           // scale.black  (Dark dimmed)
+  $surface-switch-thumb: #768390; // scale.gray.3 (Dark dimmed)
   $on-surface: on($surface-z0);
 
   $primary: $primary-on-dark;
@@ -136,21 +136,18 @@ $titlebar-indicator: currentcolor;
   $visited: $visited-on-dark;
   $on-visited: on($visited);
 
-  $titlebar: color.mix(white, $surface-z0, 9%);
-  $titlebar-backdrop: $surface-z1;
+  $panel: #22272e;             // scale.gray.9 (Dark dimmed)
+  $on-panel: #cdd9e5;          // scale.white  (Dark dimmed)
+
+  $titlebar: #22272e;          // scale.gray.9 (Dark dimmed)
+  $titlebar-backdrop: #1c2128; // scale.black  (Dark dimmed)
   $on-titlebar: on($titlebar);
 }
 
 @if theme.$light-topbar {
-  $panel: $scrim;
-  $on-panel: on($panel);
-
-  $panel-solid: #e0e0e0;
-  $on-panel-solid: on($panel-solid);
-
-  $titlebar: #f0f0f0;
-  $titlebar-backdrop: #ebebeb;
-  $on-titlebar: on($titlebar);
+  $titlebar: #eaeef2;           // scale.gray.1 (Light)
+  $titlebar-backdrop: #f6f8fa;  // scale.gray.0 (Light)
+  $on-titlebar: #1b1f24;        // scale.black  (Light)
 
   $titlebar-indicator: $primary;
 }
